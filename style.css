@@ -9,17 +9,11 @@ html {
     --title-color: #748cab;
 }
 body {
-    background-color: var(--white);
+    background-color: var(--black);
     color: var(--white);
     font-family: "Roboto Mono", monospace;
     font-size: 1.2em;
     font-style: normal;
-}
-
-@media only screen and (max-width: 600px) {
-    .page {
-        padding-inline: 20px !important;
-    }
 }
 
 /* Adding fade in animation */
@@ -47,6 +41,15 @@ body {
     animation-timing-function: ease-in;
 }
 
+@keyframes slidein {
+    from {
+        transform: scale(50);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 .page {
 
     /* Strething through the screen */
@@ -63,6 +66,9 @@ body {
     align-items: start;
     justify-content: center;
     padding-inline: 20vw;
+
+    animation-name: slidein;
+    animation-duration: 500ms;
 }
 
 .next {
@@ -124,7 +130,7 @@ body {
     position: relative;
 
     /* Setting the size */
-    width: 100%;
+    max-width: 100vw;
     text-align: center;
     font-size: 14em;
     line-height: 1em;
@@ -191,4 +197,16 @@ body {
 .title {
     margin-block: 5px;
     color: var(--title-color);
+}
+
+@media only screen and (max-width: 600px) {
+    .page {
+        padding-inline: 20px;
+    }
+    .name {
+        font-size: 10em;
+    }
+    .dp {
+        height: 70vh;
+    }
 }
