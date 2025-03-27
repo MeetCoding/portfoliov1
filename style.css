@@ -14,6 +14,12 @@ body {
     font-style: normal;
 }
 
+@media only screen and (max-width: 600px) {
+    .page {
+        padding-inline: 20px !important;
+    }
+}
+
 /* Adding fade in animation */
 @keyframes fadein {
     from {
@@ -23,6 +29,14 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+@keyframes fadeno {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
     }
 }
 .page > * {
@@ -90,6 +104,8 @@ body {
     bottom: 0;
     height: 90vh;
     transform: translateX(-50%);
+    
+    animation-name: fadeno;
 }
 #page1 {
 
@@ -120,6 +136,10 @@ body {
         var(--border) calc(-1*var(--border)) 0 var(--black),
         calc(-1*var(--border)) var(--border) 0 var(--black),
         calc(-1*var(--border)) calc(-1*var(--border)) 0 var(--black);
+
+    /* Changing animation */
+    animation-name: fadeno;
+    animation-duration: 1.3s;
 }
 .grad {
 
@@ -141,6 +161,10 @@ body {
     left: 50%;
     bottom: 50px;
     transform: translateX(-50%);
+
+    /* Changing animation */
+    animation-name: fadeno;
+    animation-duration: 2s;
 
 }
 
@@ -164,4 +188,5 @@ body {
 
 .title {
     margin-block: 5px;
+    color: red;
 }
